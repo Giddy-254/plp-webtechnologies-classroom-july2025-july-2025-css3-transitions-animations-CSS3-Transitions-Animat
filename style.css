@@ -1,0 +1,112 @@
+/* --- General --- */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f9f9f9;
+  margin: 2rem;
+}
+section {
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  width: 75%;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* --- Hover button & animated box --- */
+#hoverBtn, #animateBtn, #calcBtn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform .25s ease, background .25s ease;
+}
+#hoverBtn:hover, #animateBtn:hover, #calcBtn:hover { transform: translateY(-3px); background:#0056b3; }
+
+.animated-box {
+  width: 100px; height: 100px;
+  margin: 16px auto;
+  background: coral; border-radius: 10px;
+  transition: transform 1s ease;
+}
+.animated {
+  transform: rotate(360deg) scale(1.4);
+}
+
+/* --- Keyframe pulse (used via .active class) --- */
+@keyframes pulse {
+  0%   { transform: scale(1);  background: coral; }
+  50%  { transform: scale(1.2); background: orange; }
+  100% { transform: scale(1);  background: coral; }
+}
+.animated-box.active { animation: pulse 1s infinite; }
+
+/* --- Color changing box (smooth multi-color) --- */
+.color-changing-box {
+  width: 130px; height: 130px;
+  margin: 18px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  animation: colorChange 6s linear infinite;
+}
+@keyframes colorChange {
+  0%   { background: #ff4d4d; }   
+  20%  { background: #ff9a4d; }   
+  40%  { background: #ffe44d; }   
+  60%  { background: #7ed957; }   
+  80%  { background: #4da6ff; }   
+  100% { background: #b77dff; }   
+}
+
+/* --- Orbit container & orbit animation (reliable technique) --- */
+.orbit-container {
+  position: relative;
+  width: 240px; height: 240px;
+  margin: 20px auto;
+}
+
+/* center box sits in the middle */
+.center-box {
+  width: 80px; height: 80px;
+  background: purple;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* orbiter rotates around the center; its origin is at the center point */
+.orbiter {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 0; height: 0;        
+  transform-origin: 0 0;
+  animation: orbit 6s linear infinite;
+}
+
+/* the orbiting image is offset to the right so it will circle */
+.orbiting-img {
+  position: absolute;
+  left: 90px;                
+  top: -25px;                
+  width: 50px; height: 50px;
+  border-radius: 8px; 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+/* rotate the orbiter container (the image will move in a circle) */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* small responsive tweak */
+@media (max-width: 480px) {
+  .orbit-container { width: 180px; height: 180px; }
+  .orbiting-img { left: 70px; top: -20px; width:40px; height:40px; }
+}

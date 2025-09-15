@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bringing Web Pages to Life</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>✨ Bringing Web Pages to Life with CSS & JS ✨</h1>
+
+  <!-- Part 1 -->
+  <section>
+    <h2>Part 1: CSS Animations</h2>
+    <button id="hoverBtn">Hover Over Me</button>
+    <div class="animated-box" id="box"></div>
+  </section>
+
+  <!-- Part 2 -->
+  <section>
+    <h2>Part 2: Function Demo</h2>
+    <p id="result">Click the button to calculate!</p>
+    <button id="calcBtn">Calculate with Function</button>
+  </section>
+
+  <!-- Part 3 -->
+  <section>
+    <h2>Part 3: Combined Animation</h2>
+    <button id="animateBtn">Animate the Box</button>
+  </section>
+
+  <!-- Bonus: Color changing box -->
+  <section>
+    <h2>Bonus: Animated Color Box</h2>
+    <div class="color-changing-box" id="colorBox"></div>
+  </section>
+
+  <!-- Bonus: Orbiting image around a center box -->
+  <section>
+    <h2>Bonus: Orbiting Image Around Box</h2>
+
+    <div class="orbit-container">
+      <div class="center-box" id="centerBox"></div>
+
+      <!-- orbiter rotates; the image is offset to the right so it orbits the center -->
+      <div class="orbiter" id="orbiter">
+        <img src="https://via.placeholder.com/50" alt="Orbiting" class="orbiting-img" />
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
